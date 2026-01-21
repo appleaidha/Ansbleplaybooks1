@@ -1,0 +1,10 @@
+---
+- name: Downloads jenkins.war into all servers
+  hosts: all 
+  tasks: 
+    - name: Downloads jenkins.war
+      get_url:
+        url: https://get.jenkins.io/war-stable/2.528.3/jenkins.war
+        dest: /tmp
+
+...
