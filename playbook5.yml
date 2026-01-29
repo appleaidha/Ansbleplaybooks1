@@ -1,0 +1,21 @@
+---
+- name: Create users create files in the users home dir
+  hosts: all 
+  tasks: 
+    - name: user creation
+      user:
+        name: sri
+        password: Apple
+        uid: 8899
+        shell: /bin/bash
+        comment: "A good boy"
+        home: /tmp/sri
+    - name: Create file in users home dir
+      file:
+        name: /tmp/sri/file1
+        state: touch
+        mode: 750
+        owner: sri
+        group: root
+...
+      
